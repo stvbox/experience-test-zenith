@@ -2,42 +2,14 @@ databaseChangeLog:
   - logicalFilePath: db/changelog/db.changelog-0.1.yaml
 
   - changeSet:
-      id: 1655119517279-1
-      author: stvbox (generated)
+      id: 1655137325892-1
+      author: goot (generated)
       changes:
         - createSequence:
             sequenceName: HIBERNATE_SEQUENCE
   - changeSet:
-      id: 1655119517279-2
-      author: stvbox (generated)
-      changes:
-        - createTable:
-            columns:
-              - column:
-                  constraints:
-                    nullable: false
-                  name: DTYPE
-                  type: VARCHAR(31)
-              - column:
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: CONSTRAINT_7
-                  name: ID
-                  type: BIGINT
-              - column:
-                  name: NAME
-                  type: VARCHAR(1000000000)
-              - column:
-                  name: PATRONYMIC
-                  type: VARCHAR(1000000000)
-              - column:
-                  name: SURNAME
-                  type: VARCHAR(1000000000)
-            tableName: EMPLOYEE
-  - changeSet:
-      id: 1655119517279-3
-      author: stvbox (generated)
+      id: 1655137325892-2
+      author: goot (generated)
       changes:
         - createTable:
             columns:
@@ -64,34 +36,8 @@ databaseChangeLog:
                   type: VARCHAR(1000000000)
             tableName: EMPLOYEES
   - changeSet:
-      id: 1655119517279-4
-      author: stvbox (generated)
-      changes:
-        - createTable:
-            columns:
-              - column:
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: CONSTRAINT_1
-                  name: ID
-                  type: BIGINT
-              - column:
-                  name: FINISH_DATE
-                  type: BIGINT
-              - column:
-                  name: NAME
-                  type: VARCHAR(1000000000)
-              - column:
-                  name: START_DATE
-                  type: BIGINT
-              - column:
-                  name: STATUS
-                  type: INT
-            tableName: PROJECT
-  - changeSet:
-      id: 1655119517279-5
-      author: stvbox (generated)
+      id: 1655137325892-3
+      author: goot (generated)
       changes:
         - createTable:
             columns:
@@ -116,66 +62,66 @@ databaseChangeLog:
                   type: INT
             tableName: PROJECTS
   - changeSet:
-      id: 1655119517279-6
-      author: stvbox (generated)
+      id: 1655137325892-4
+      author: goot (generated)
       changes:
         - createTable:
             columns:
               - column:
                   constraints:
                     nullable: false
-                    primaryKey: true
-                    primaryKeyName: CONSTRAINT_C
                   name: PROJECT_ID
                   type: BIGINT
               - column:
                   constraints:
                     nullable: false
-                    primaryKey: true
-                    primaryKeyName: CONSTRAINT_C
                   name: EXECUTOR_ID
                   type: BIGINT
             tableName: PROJECT_EXECUTOR
   - changeSet:
-      id: 1655119517279-7
-      author: stvbox (generated)
+      id: 1655137325892-5
+      author: goot (generated)
       changes:
         - createTable:
             columns:
               - column:
                   constraints:
                     nullable: false
-                    primaryKey: true
-                    primaryKeyName: CONSTRAINT_E
                   name: PROJECT_ID
                   type: BIGINT
               - column:
                   constraints:
                     nullable: false
-                    primaryKey: true
-                    primaryKeyName: CONSTRAINT_E
                   name: MANAGER_ID
                   type: BIGINT
             tableName: PROJECT_MANAGER
   - changeSet:
-      id: 1655119517279-8
-      author: stvbox (generated)
+      id: 1655137325892-6
+      author: goot (generated)
+      changes:
+        - addPrimaryKey:
+            columnNames: EXECUTOR_ID, PROJECT_ID
+            constraintName: CONSTRAINT_C
+            tableName: PROJECT_EXECUTOR
+  - changeSet:
+      id: 1655137325892-7
+      author: goot (generated)
+      changes:
+        - addPrimaryKey:
+            columnNames: MANAGER_ID, PROJECT_ID
+            constraintName: CONSTRAINT_E
+            tableName: PROJECT_MANAGER
+  - changeSet:
+      id: 1655137325892-8
+      author: goot (generated)
       changes:
         - addUniqueConstraint:
             columnNames: NAME
             constraintName: UK_1E447B96PEDRVTXW44OT4QXEM
             tableName: PROJECTS
   - changeSet:
-      id: 1655119517279-9
-      author: stvbox (generated)
-      changes:
-        - addUniqueConstraint:
-            columnNames: NAME
-            constraintName: UK_3K75VVU7MEVYVVB5MAY5LJ8K7
-            tableName: PROJECT
-  - changeSet:
-      id: 1655119517279-10
-      author: stvbox (generated)
+      id: 1655137325892-9
+      author: goot (generated)
       changes:
         - createIndex:
             columns:
@@ -184,8 +130,8 @@ databaseChangeLog:
             indexName: FK46MK8E7G1M321Y96LKT5EXYT2_INDEX_C
             tableName: PROJECT_EXECUTOR
   - changeSet:
-      id: 1655119517279-11
-      author: stvbox (generated)
+      id: 1655137325892-10
+      author: goot (generated)
       changes:
         - createIndex:
             columns:
@@ -194,8 +140,8 @@ databaseChangeLog:
             indexName: FK4ST1IFW1MY2WBUN2U6L1G2WJ0_INDEX_C
             tableName: PROJECT_EXECUTOR
   - changeSet:
-      id: 1655119517279-12
-      author: stvbox (generated)
+      id: 1655137325892-11
+      author: goot (generated)
       changes:
         - createIndex:
             columns:
@@ -204,8 +150,8 @@ databaseChangeLog:
             indexName: FK5KL01I55PN0KYBL6AYHI1GM5L_INDEX_E
             tableName: PROJECT_MANAGER
   - changeSet:
-      id: 1655119517279-13
-      author: stvbox (generated)
+      id: 1655137325892-12
+      author: goot (generated)
       changes:
         - createIndex:
             columns:
@@ -214,8 +160,8 @@ databaseChangeLog:
             indexName: FKI9L3Q0PNEAWCCQ3DE236PM4SJ_INDEX_E
             tableName: PROJECT_MANAGER
   - changeSet:
-      id: 1655119517279-14
-      author: stvbox (generated)
+      id: 1655137325892-13
+      author: goot (generated)
       changes:
         - addForeignKeyConstraint:
             baseColumnNames: PROJECT_ID
@@ -229,8 +175,8 @@ databaseChangeLog:
             referencedTableName: PROJECTS
             validate: true
   - changeSet:
-      id: 1655119517279-15
-      author: stvbox (generated)
+      id: 1655137325892-14
+      author: goot (generated)
       changes:
         - addForeignKeyConstraint:
             baseColumnNames: EXECUTOR_ID
@@ -244,8 +190,8 @@ databaseChangeLog:
             referencedTableName: EMPLOYEES
             validate: true
   - changeSet:
-      id: 1655119517279-16
-      author: stvbox (generated)
+      id: 1655137325892-15
+      author: goot (generated)
       changes:
         - addForeignKeyConstraint:
             baseColumnNames: MANAGER_ID
@@ -259,8 +205,8 @@ databaseChangeLog:
             referencedTableName: EMPLOYEES
             validate: true
   - changeSet:
-      id: 1655119517279-17
-      author: stvbox (generated)
+      id: 1655137325892-16
+      author: goot (generated)
       changes:
         - addForeignKeyConstraint:
             baseColumnNames: PROJECT_ID
